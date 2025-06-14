@@ -1,0 +1,36 @@
+{
+  "name": "@road-labs/ocmf-crypto",
+  "version": "0.0.1",
+  "main": "build/cjs/index.js",
+  "module": "build/es2022/index.js",
+  "types": "build/types/index.d.ts",
+  "scripts": {
+    "clear": "rimraf build",
+    "build": "pnpm run build:module && pnpm run build:types",
+    "build:module": "pnpm run build:cjs && pnpm run build:es2022",
+    "build:cjs": "tsc -p tsconfig.json --removeComments --module commonjs --outDir build/cjs",
+    "build:es2022": "tsc -p tsconfig.json --removeComments --module es2022 --outDir build/es2022",
+    "prebuild:types": "rimraf build/types",
+    "build:types": "tsc -p tsconfig.json --outDir build/types --declaration --emitDeclarationOnly",
+    "rebuild": "pnpm run clear && pnpm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@jest/globals": "catalog:",
+    "@types/node": "catalog:",
+    "jest": "catalog:",
+    "rimraf": "catalog:",
+    "ts-jest": "catalog:",
+    "ts-node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@peculiar/asn1-ecc": "^2.3.15",
+    "@peculiar/asn1-pkcs8": "^2.3.15",
+    "@peculiar/asn1-schema": "^2.3.15",
+    "@peculiar/asn1-x509": "^2.3.15"
+  }
+}

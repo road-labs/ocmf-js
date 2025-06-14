@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCMF Verifier</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width: 150px;
+        margin-bottom: 20px;
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        margin-bottom: 10px;
+      }
+
+      button {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        font-size: 18px;
+        color: white;
+        background-color: #062ba4;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #02184f;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      #verification {
+        width: 100%;
+        text-align: left;
+      }
+
+      #parsed-data {
+        width: 100%;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>OCMF Verifier</h1>
+      <strong><label for="signed-data">Raw Data</label></strong
+      ><br />
+      <textarea id="signed-data" rows="10"></textarea><br />
+      <strong><label for="public-key">Public Key</label></strong
+      ><br />
+      <textarea id="public-key" rows="10"></textarea><br />
+      <button id="verify">Verify</button>
+      <hr />
+      <div id="verification"></div>
+      <pre id="parsed-data"></pre>
+    </div>
+  </body>
+</html>

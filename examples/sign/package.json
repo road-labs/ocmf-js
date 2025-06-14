@@ -1,0 +1,24 @@
+{
+  "name": "ocmf-example-sign",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "ts-node ./src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "private": "true",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "ts-node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@road-labs/ocmf": "workspace:*",
+    "@road-labs/ocmf-crypto": "workspace:*",
+    "@road-labs/ocmf-crypto-noble": "workspace:*",
+    "@road-labs/ocmf-crypto-node": "workspace:*",
+    "@road-labs/ocmf-crypto-web": "workspace:*"
+  }
+}

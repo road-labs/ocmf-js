@@ -1,0 +1,25 @@
+{
+  "name": "ocmf-example-web",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "private": "true",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.2",
+    "ts-node": "catalog:",
+    "typescript": "catalog:",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@road-labs/ocmf": "workspace:*",
+    "@road-labs/ocmf-crypto-noble": "workspace:*"
+  }
+}

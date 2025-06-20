@@ -21,11 +21,11 @@ JavaScript ecosystem, there are various offerings on this front; these typically
 implemented backends around three typical options on this front - make a choice based on the platform you're using,
 required coverage of signature methods, and any security considerations.
 
-| package                                                                                    | platforms       | implementation  | supported signatures                           | remarks                                                                     |
-|--------------------------------------------------------------------------------------------|-----------------|-----------------|------------------------------------------------|-----------------------------------------------------------------------------|
-| [@road-labs/ocmf-crypto-noble](https://www.npmjs.com/package/@road-labs/ocmf-crypto-noble) | nodejs, browser | pure javascript | All specified by OCMF                          | Audited JS implementation                                                   |
-| [@road-labs/ocmf-crypto-node](https://www.npmjs.com/package/@road-labs/ocmf-crypto-node)   | nodejs          | native          | All specified by OCMF                          | Browser use may be possible via crypto-browserify, but this not recommended |
-| [@road-labs/ocmf-crypto-web](https://www.npmjs.com/package/@road-labs/ocmf-crypto-web)     | nodejs, browser | native          | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Limited curves available                                                    |
+| package                                                                                    | platforms       | ECC implementation | supported signatures                           | remarks                                                                                                                                          |
+|--------------------------------------------------------------------------------------------|-----------------|--------------------|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| [@road-labs/ocmf-crypto-noble](https://www.npmjs.com/package/@road-labs/ocmf-crypto-noble) | nodejs, browser | pure javascript    | All specified by OCMF                          | Uses [@noble/curves](https://github.com/paulmillr/noble-curves) package, an audited JS ECC implementation                                        |
+| [@road-labs/ocmf-crypto-node](https://www.npmjs.com/package/@road-labs/ocmf-crypto-node)   | nodejs          | native             | All specified by OCMF                          | Uses the nodejs [Crypto](https://nodejs.org/api/crypto.html) module. Browser use may be possible via crypto-browserify, but this not recommended |
+| [@road-labs/ocmf-crypto-web](https://www.npmjs.com/package/@road-labs/ocmf-crypto-web)     | nodejs, browser | native             | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Uses the [Web Crypto API](https://w3c.github.io/webcrypto/). Limited curves available.                                                           |
 
 ## Usage
 

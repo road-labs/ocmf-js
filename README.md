@@ -12,7 +12,7 @@ Using your favourite package manager:
 - [yarn](https://yarnpkg.com/)  - `yarn add @road-labs/ocmf`
 - [pnpm](https://pnpm.io/) - `pnpm add @road-labs/ocmf`
 
-Note that package to cover crypto related functionality will also need install, discussed below.
+Note that package to cover crypto related functionality will also need to be installed, discussed below.
 
 ## Dependencies
 
@@ -21,11 +21,11 @@ JavaScript ecosystem, there are various offerings on this front; these typically
 implemented backends around three typical options on this front - make a choice based on the platform you're using,
 required coverage of signature methods, and any security considerations.
 
-| package                                                      | platforms       | implementation  | supported signatures                           | remarks                                                                     |
-|--------------------------------------------------------------|-----------------|-----------------|------------------------------------------------|-----------------------------------------------------------------------------|
-| [@road-labs/ocmf-crypto-noble](./packages/ocmf-crypto-noble) | nodejs, browser | pure javascript | All specified by OCMF                          | Audited JS implementation                                                   |
-| [@road-labs/ocmf-crypto-node](./packages/ocmf-crypto-node)   | nodejs          | native          | All specified by OCMF                          | Browser use may be possible via crypto-browserify, but this not recommended |
-| [@road-labs/ocmf-crypto-web](./packages/ocmf-crypto-web)     | nodejs, browser | native          | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Limited curves available                                                    |
+| package                                                                         | platforms       | implementation  | supported signatures                           | remarks                                                                     |
+|---------------------------------------------------------------------------------|-----------------|-----------------|------------------------------------------------|-----------------------------------------------------------------------------|
+| [ocmf-crypto-noble](https://www.npmjs.com/package/@road-labs/ocmf-crypto-noble) | nodejs, browser | pure javascript | All specified by OCMF                          | Audited JS implementation                                                   |
+| [ocmf-crypto-node](https://www.npmjs.com/package/@road-labs/ocmf-crypto-node)   | nodejs          | native          | All specified by OCMF                          | Browser use may be possible via crypto-browserify, but this not recommended |
+| [ocmf-crypto-web](https://www.npmjs.com/package/@road-labs/ocmf-crypto-web)     | nodejs, browser | native          | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Limited curves available                                                    |
 
 ## Usage
 
@@ -51,8 +51,8 @@ const signature = await signer.sign(
     IS: true,
     IT: 'ISO14443',
     RD: [
-      {TM: '2025-06-14T08:44:54,562+0100 S', TX: 'B', RV: 0.75, RU: 'kWh', ST: 'G'},
-      {TM: '2025-06-14T11:44:54,562+0100 S', TX: 'E', RV: 3.12, RU: 'kWh', ST: 'G'},
+      { TM: '2025-06-14T08:44:54,562+0100 S', TX: 'B', RV: 0.75, RU: 'kWh', ST: 'G' },
+      { TM: '2025-06-14T11:44:54,562+0100 S', TX: 'E', RV: 3.12, RU: 'kWh', ST: 'G' },
     ],
   },
   privateKey,

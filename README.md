@@ -21,19 +21,19 @@ JavaScript ecosystem, there are various offerings on this front; these typically
 implemented backends around three typical options on this front - make a choice based on the platform you're using,
 required coverage of signature methods, and any security considerations.
 
-| package                                                                                                 | platforms       | implementation  | supported signatures                           | remarks                                                                     |
-|---------------------------------------------------------------------------------------------------------|-----------------|-----------------|------------------------------------------------|-----------------------------------------------------------------------------|
-| <nobr>[@road-labs/ocmf-crypto-noble](https://www.npmjs.com/package/@road-labs/ocmf-crypto-noble)</nobr> | nodejs, browser | pure javascript | All specified by OCMF                          | Audited JS implementation                                                   |
-| <nobr>[@road-labs/ocmf-crypto-node](https://www.npmjs.com/package/@road-labs/ocmf-crypto-node)</nobr>   | nodejs          | native          | All specified by OCMF                          | Browser use may be possible via crypto-browserify, but this not recommended |
-| <nobr>[@road-labs/ocmf-crypto-web](https://www.npmjs.com/package/@road-labs/ocmf-crypto-web)</nobr>     | nodejs, browser | native          | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Limited curves available                                                    |
+| package                                                                                    | platforms       | implementation  | supported signatures                           | remarks                                                                     |
+|--------------------------------------------------------------------------------------------|-----------------|-----------------|------------------------------------------------|-----------------------------------------------------------------------------|
+| [@road-labs/ocmf-crypto-noble](https://www.npmjs.com/package/@road-labs/ocmf-crypto-noble) | nodejs, browser | pure javascript | All specified by OCMF                          | Audited JS implementation                                                   |
+| [@road-labs/ocmf-crypto-node](https://www.npmjs.com/package/@road-labs/ocmf-crypto-node)   | nodejs          | native          | All specified by OCMF                          | Browser use may be possible via crypto-browserify, but this not recommended |
+| [@road-labs/ocmf-crypto-web](https://www.npmjs.com/package/@road-labs/ocmf-crypto-web)     | nodejs, browser | native          | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Limited curves available                                                    |
 
 ## Usage
 
 ### Signing
 
 ```typescript
-import {PayloadData, Signer} from '@road-labs/ocmf';
-import {Crypto} from '@road-labs/ocmf-crypto-node';
+import { PayloadData, Signer } from '@road-labs/ocmf';
+import { Crypto } from '@road-labs/ocmf-crypto-node';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-noble';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-web';
 
@@ -51,8 +51,8 @@ const signature = await signer.sign(
     IS: true,
     IT: 'ISO14443',
     RD: [
-      {TM: '2025-06-14T08:44:54,562+0100 S', TX: 'B', RV: 0.75, RU: 'kWh', ST: 'G'},
-      {TM: '2025-06-14T11:44:54,562+0100 S', TX: 'E', RV: 3.12, RU: 'kWh', ST: 'G'},
+      { TM: '2025-06-14T08:44:54,562+0100 S', TX: 'B', RV: 0.75, RU: 'kWh', ST: 'G' },
+      { TM: '2025-06-14T11:44:54,562+0100 S', TX: 'E', RV: 3.12, RU: 'kWh', ST: 'G' },
     ],
   },
   privateKey,
@@ -65,8 +65,8 @@ A more complete working example is available under [examples/verify](./examples/
 ### Verification
 
 ```typescript
-import {PayloadData, Signer} from '@road-labs/ocmf';
-import {Crypto} from '@road-labs/ocmf-crypto-node';
+import { PayloadData, Signer } from '@road-labs/ocmf';
+import { Crypto } from '@road-labs/ocmf-crypto-node';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-noble';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-web';
 

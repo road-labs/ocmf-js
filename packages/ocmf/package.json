@@ -18,7 +18,13 @@
     "rebuild": "pnpm run clear && pnpm run build",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "ocmf"
+  ],
+  "bugs": {
+    "url": "https://github.com/road-labs/ocmf-js/issues"
+  },
+  "homepage": "https://github.com/road-labs/ocmf-js/tree/main/packages/ocmf#readme",
   "author": "",
   "license": "MIT",
   "description": "",

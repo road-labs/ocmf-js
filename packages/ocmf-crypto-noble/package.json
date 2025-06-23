@@ -4,6 +4,9 @@
   "main": "build/cjs/index.js",
   "module": "build/es2022/index.js",
   "types": "build/types/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "clear": "rimraf build",
     "build": "pnpm run build:module && pnpm run build:types",

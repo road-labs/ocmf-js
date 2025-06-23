@@ -16,16 +16,14 @@ Note that package to cover crypto related functionality will also need to be ins
 
 ## Dependencies
 
-The OCMF specification requires Eliptic Curve Cryptography (ECC) functions for singing and verification. Within the
-JavaScript ecosystem, there are various offerings on this front; these typically have certain limitations. We have
-implemented backends around three typical options on this front - make a choice based on the platform you're using,
-required coverage of signature methods, and any security considerations.
+The OCMF specification requires Eliptic Curve Cryptography (ECC) functions for signing and verification. Within the
+JavaScript ecosystem, there are various offerings on this front; these often have certain limitations. We have
+implemented backends around three typical options, detailed below - make a choice based on the platform you're using,
+required coverage of signature methods, and any security considerations:
 
-| package                                                                                    | platforms       | ECC implementation | supported signatures                           | remarks                                                                                                                                          |
-|--------------------------------------------------------------------------------------------|-----------------|--------------------|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| [@road-labs/ocmf-crypto-noble](https://www.npmjs.com/package/@road-labs/ocmf-crypto-noble) | nodejs, browser | pure javascript    | All specified by OCMF                          | Uses [@noble/curves](https://github.com/paulmillr/noble-curves) package, an audited JS ECC implementation                                        |
-| [@road-labs/ocmf-crypto-node](https://www.npmjs.com/package/@road-labs/ocmf-crypto-node)   | nodejs          | native             | All specified by OCMF                          | Uses the nodejs [Crypto](https://nodejs.org/api/crypto.html) module. Browser use may be possible via crypto-browserify, but this not recommended |
-| [@road-labs/ocmf-crypto-web](https://www.npmjs.com/package/@road-labs/ocmf-crypto-web)     | nodejs, browser | native             | ECDSA-secp256r1-SHA256, ECDSA-secp384r1-SHA256 | Uses the [Web Crypto API](https://w3c.github.io/webcrypto/). Limited curves available.                                                           |
+- [@road-labs/ocmf-crypto-noble](./packages/ocmf-crypto-noble)
+- [@road-labs/ocmf-crypto-node](./packages/ocmf-crypto-node)
+- [@road-labs/ocmf-crypto-web](./packages/ocmf-crypto-web)
 
 ## Usage
 
@@ -60,7 +58,7 @@ const signature = await signer.sign(
 );
 ```
 
-A more complete working example is available under [examples/verify](./examples/verify);
+A more complete working example is available under [examples/verify](./examples/verify).
 
 ### Verification
 
@@ -84,4 +82,5 @@ if (result.verified) {
 }
 ```
 
-A more complete working example is available under [examples/sign](./examples/sign);
+A more complete working example is available under [examples/sign](./examples/sign). Additionally, a web based example
+is available under [examples/web](./examples/web), which is also hosted at https://road-labs.github.io/ocmf-js/

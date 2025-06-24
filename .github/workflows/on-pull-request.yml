@@ -1,0 +1,19 @@
+name: On Pull Request
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize ]
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: volta-cli/action@v4
+      - name: Run tests
+        run: pnpm run test
+      - name: Create build
+        run: pnpm run build

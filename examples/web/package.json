@@ -2,7 +2,7 @@
   "name": "ocmf-example-web",
   "version": "0.0.1",
   "scripts": {
-    "clear": "rimraf build",
+    "clear": "rimraf dist",
     "build": "webpack",
     "rebuild": "pnpm run clear && pnpm run build"
   },

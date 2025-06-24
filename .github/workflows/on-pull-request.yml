@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup node
+      - name: Setup volta
         uses: volta-cli/action@v4
-      - name: Install pnpm
-        run: volta install pnpm
+      - name: Install node and pnpm
+        run: volta install node pnpm
       - name: Run tests
         run: pnpm run test
       - name: Create build

@@ -1,8 +1,14 @@
-# ocmf-js
+# ocmf-js 🔏
 
 A TypeScript/JavaScript implementation of
 the [Open Charge Metering Format (OCMF)](https://github.com/SAFE-eV/OCMF-Open-Charge-Metering-Format) specification.
-Both signing and verification functionality is available.
+
+## Features
+
+- Private key based signing of OCMF signed meter data
+- Public key based verification of OCMF signed meter data
+- Type representation of the OCMF payload format
+- Node.js and browser support
 
 ## Installation
 
@@ -16,9 +22,9 @@ Note that package to cover crypto related functionality will also need to be ins
 
 ## Dependencies
 
-The OCMF specification requires Eliptic Curve Cryptography (ECC) functions for signing and verification. Within the
+The OCMF specification requires Elliptic Curve Cryptography (ECC) functions for signing and verification. Within the
 JavaScript ecosystem, there are various offerings on this front; these often have certain limitations. We have
-implemented backends around three typical options, detailed below - make a choice based on the platform you're using,
+implemented backends around three typical options, listed below - make a choice based on the platform you're using,
 required coverage of signature methods, and any security considerations:
 
 - [@road-labs/ocmf-crypto-noble](./packages/ocmf-crypto-noble)
@@ -58,7 +64,7 @@ const signature = await signer.sign(
 );
 ```
 
-A more complete working example is available under [examples/verify](./examples/verify).
+A more complete working example is available under [examples/sign](./examples/sign).
 
 ### Verification
 
@@ -82,5 +88,5 @@ if (result.verified) {
 }
 ```
 
-A more complete working example is available under [examples/sign](./examples/sign). Additionally, a web based example
-is available under [examples/web](./examples/web), which is also hosted at https://road-labs.github.io/ocmf-js/
+A more complete working example is available under [examples/verify](./examples/verify). Additionally, a web based
+example is available under [examples/web](./examples/web), which is also hosted at https://road-labs.github.io/ocmf-js/

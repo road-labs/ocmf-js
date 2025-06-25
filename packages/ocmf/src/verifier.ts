@@ -8,6 +8,9 @@ import {
   UnknownSignatureMimeType,
 } from './errors';
 
+// Default since OCMF Version 0.4
+const defaultSignatureMethodId = 'ECDSA-secp256r1-SHA256';
+
 export interface ParseAndVerifyResult {
   verified: boolean;
   value?: SignedData; // Only included if the payload was verified
@@ -29,7 +32,8 @@ export default class Verifier {
     const signedData = parseSections(sections);
     const { signature } = signedData;
 
-    const signatureMethod = signatureMethodFromId(signature.SA);
+    const signatureMethodId = signature.SA || defaultSignatureMethodId;
+    const signatureMethod = signatureMethodFromId(signatureMethodId);
     if (signatureMethod.curve !== publicKey.getCurve()) {
       throw new CurveMismatchError(
         `Expected ${publicKey.getCurve()}, actual ${signatureMethod.curve}`

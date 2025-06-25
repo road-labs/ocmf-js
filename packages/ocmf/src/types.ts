@@ -137,7 +137,7 @@ export interface PayloadData {
 }
 
 export interface Signature {
-  SA: SignatureMethodId;
+  SA?: SignatureMethodId;
   SE?: 'hex';
   SM?: 'application/x-der';
   SD: string;

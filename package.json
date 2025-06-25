@@ -6,7 +6,9 @@
     "rebuild": "pnpm -r run rebuild",
     "test": "pnpm -r run test",
     "format": "pnpm exec prettier . --write",
-    "publish": "pnpm -r publish --access public"
+    "publish": "pnpm -r publish --access public",
+    "lint": "pnpm run lint:format",
+    "lint:format": "pnpm exec prettier . --check"
   },
   "keywords": [],
   "author": "",

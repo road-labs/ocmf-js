@@ -79,6 +79,7 @@ export function isValidSignature(raw: Uint8Array, curve: Curve): boolean {
   try {
     signature = decodePkixEcdsaSigValue(raw);
   } catch (err) {
+    console.warn(`Failed to decode ECDSASigValue: ${err}`);
     return false;
   }
 

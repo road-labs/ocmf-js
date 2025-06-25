@@ -7,7 +7,8 @@
     "test": "pnpm -r run test",
     "format": "pnpm exec prettier . --write",
     "publish": "pnpm -r publish --access public",
-    "lint": "pnpm run lint:format",
+    "lint": "pnpm run lint:eslint && pnpm run lint:format",
+    "lint:eslint": "pnpm exec eslint .",
     "lint:format": "pnpm exec prettier . --check"
   },
   "keywords": [],
@@ -16,7 +17,11 @@
   "private": "true",
   "description": "",
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "prettier": "^3.5.3",
+    "typescript": "catalog:",
+    "typescript-eslint": "^8.35.0"
   },
   "prettier": {
     "singleQuote": true,

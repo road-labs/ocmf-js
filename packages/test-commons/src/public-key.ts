@@ -60,6 +60,7 @@ export function isValidPublicKey(raw: Uint8Array, curve: Curve): boolean {
   try {
     publicKey = decodePkixSubjectPublicKeyInfo(raw);
   } catch (err) {
+    console.warn(`Failed to decode SPKI: ${err}`);
     return false;
   }
 

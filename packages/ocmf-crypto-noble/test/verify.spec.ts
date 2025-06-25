@@ -17,7 +17,7 @@ const curves: Curve[] = [
 describe('verify', () => {
   it.each(buildVerifyTestCases(curves))(
     '$name',
-    ({ curve, signature, data, hash, spki, expected }) => {
+    ({ signature, data, hash, spki, expected }) => {
       const publicKey = EcPublicKey.fromEncoded(spki, 'spki-der');
       const actual = verify(signature, data, publicKey, hash, format);
       expect(actual).toEqual(expected);

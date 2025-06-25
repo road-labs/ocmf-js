@@ -24,7 +24,7 @@ describe('EcPrivateKey', () => {
 
     it.each(buildPrivateKeyTestCases(unsupported))(
       'does not support $name',
-      async ({ curve, pkcs8 }) => {
+      async ({ pkcs8 }) => {
         await expect(
           EcPrivateKey.fromEncoded(pkcs8, 'pkcs8-der')
         ).rejects.toThrow(UnsupportedCurveError);

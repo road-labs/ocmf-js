@@ -24,7 +24,7 @@ describe('EcPublicKey', () => {
 
     it.each(buildPublicKeyTestCases(unsupported))(
       'does not support $name',
-      async ({ curve, spki }) => {
+      async ({ spki }) => {
         await expect(EcPublicKey.fromEncoded(spki, 'spki-der')).rejects.toThrow(
           UnsupportedCurveError
         );

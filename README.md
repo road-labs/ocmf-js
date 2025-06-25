@@ -7,7 +7,7 @@ the [Open Charge Metering Format (OCMF)](https://github.com/SAFE-eV/OCMF-Open-Ch
 
 - Private key based signing of OCMF signed meter data
 - Public key based verification of OCMF signed meter data
-- Type representation of the OCMF payload format
+- Typescript type representation of the OCMF payload format
 - Node.js and browser support
 
 ## Installation

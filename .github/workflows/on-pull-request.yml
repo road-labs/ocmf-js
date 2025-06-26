@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 
+concurrency:
+  group: 'on-pull-request-${{ github.ref }}'
+  cancel-in-progress: false
+
 jobs:
   lint:
     name: Lint
@@ -20,7 +24,7 @@ jobs:
       - name: Run lint
         run: pnpm run lint
 
-  test:
+  build-and-test:
     name: Test
     runs-on: ubuntu-latest
     steps:

@@ -88,5 +88,5 @@ if (result.verified) {
 }
 ```
 
-A more complete working example is available under [examples/verify](./examples/verify). Additionally, a web based
+A more complete working example is available under [examples/verify](./examples/verify). Additionally, a browser based
 example is available under [examples/web](./examples/web), which is also hosted at https://road-labs.github.io/ocmf-js/

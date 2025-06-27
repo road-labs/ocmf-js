@@ -28,5 +28,9 @@
     "bracketSameLine": true,
     "trailingComma": "es5",
     "proseWrap": "always"
+  },
+  "volta": {
+    "node": "22.16.0",
+    "pnpm": "10.12.3"
   }
 }

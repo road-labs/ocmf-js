@@ -251,12 +251,6 @@ importers:
 
   packages/ocmf-crypto-node:
     dependencies:
-      '@noble/curves':
-        specifier: ^1.9.2
-        version: 1.9.2
-      '@noble/hashes':
-        specifier: ^1.8.0
-        version: 1.8.0
       '@road-labs/ocmf-crypto':
         specifier: workspace:*
         version: link:../ocmf-crypto

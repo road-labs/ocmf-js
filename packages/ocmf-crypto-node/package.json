@@ -40,8 +40,6 @@
     "test-commons": "workspace:*"
   },
   "dependencies": {
-    "@road-labs/ocmf-crypto": "workspace:*",
-    "@noble/curves": "^1.9.2",
-    "@noble/hashes": "^1.8.0"
+    "@road-labs/ocmf-crypto": "workspace:*"
   }
 }

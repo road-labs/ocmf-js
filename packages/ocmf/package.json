@@ -33,14 +33,15 @@
     "@jest/globals": "catalog:",
     "@types/node": "catalog:",
     "jest": "catalog:",
+    "jest-mock-extended": "catalog:",
     "rimraf": "catalog:",
+    "test-commons": "workspace:*",
     "ts-jest": "catalog:",
     "ts-node": "catalog:",
-    "typescript": "catalog:",
-    "jest-mock-extended": "catalog:",
-    "test-commons": "workspace:*"
+    "typescript": "catalog:"
   },
   "dependencies": {
-    "@road-labs/ocmf-crypto": "workspace:*"
+    "@road-labs/ocmf-crypto": "workspace:*",
+    "date-fns": "^4.1.0"
   }
 }

@@ -41,14 +41,14 @@ import { Crypto } from '@road-labs/ocmf-crypto-node';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-noble';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-web';
 
-const ecCrypto = new Crypto();
-const signer = new Signer(ecCrypto);
+const ocmfCrypto = new Crypto();
+const ocmfSigner = new Signer(ocmfCrypto);
 
 const rawPrivateKey = Buffer.from('<pkcs8-private-key-in-hex>', 'hex');
-const privateKey = await ecCrypto.decodeEcPrivateKey(rawPrivateKey, 'pkcs8-der');
+const privateKey = await ocmfCrypto.decodeEcPrivateKey(rawPrivateKey, 'pkcs8-der');
 const signatureMethodId = 'ECDSA-secp256r1-SHA256';
 
-const signature = await signer.sign(
+const signature = await ocmfSigner.sign(
   {
     PG: 'T1',
     MS: '1234567',
@@ -74,17 +74,18 @@ import { Crypto } from '@road-labs/ocmf-crypto-node';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-noble';
 // ...or: import { Crypto } from '@road-labs/ocmf-crypto-web';
 
-const ecCrypto = new Crypto();
-const verifier = new Verifier(ecCrypto);
+const ocmfCrypto = new Crypto();
+const ocmfVerifier = new Verifier(ocmfCrypto);
 
 const rawPublicKey = Buffer.from('<spki-public-key-in-hex>', 'hex');
-const publicKey = await ecCrypto.decodeEcPublicKey(rawPublicKey, 'spki-der');
+const publicKey = await ocmfCrypto.decodeEcPublicKey(rawPublicKey, 'spki-der');
 const signedData = 'OCMF|{"FV":"1.0","GI":"TEST","GS":"1234567"}|{"SA":"ECDSA-secp256r1-SHA256","SD":"0102030405"}';
 
-const result = await verifier.parseAndVerify(signedData, publicKey);
+const result = await ocmfVerifier.parseAndVerify(signedData, publicKey);
 
 if (result.verified) {
-  // Success
+  // Success, log the parsed OCMF payload
+  console.log(result.value);
 }
 ```
 

@@ -43,6 +43,7 @@ const cryptoBackend = process.env.OCMF_JS_CRYPTO_BACKEND || 'node';
       },
     ],
   };
+
   let crypto: CryptoAdapter;
   switch (cryptoBackend) {
     case 'noble':

@@ -36,14 +36,12 @@ const cryptoBackend = process.env.OCMF_JS_CRYPTO_BACKEND || 'node';
   const result = await verifier.parseAndVerify(signedData, publicKey);
 
   console.log(`crypto: ${cryptoBackend}`);
-  console.log(`signatureMethodId: ${result?.value?.signature?.SA}`);
   console.log(`verified: ${result.verified}`);
   console.log(`value:`, result.value);
 
   /*
   Output:
     crypto: node
-    signatureMethodId: ECDSA-secp256r1-SHA256
     verified: true
     value: {
       header: 'OCMF',

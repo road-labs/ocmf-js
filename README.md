@@ -18,7 +18,7 @@ Using your favourite package manager:
 - [yarn](https://yarnpkg.com/)  - `yarn add @road-labs/ocmf`
 - [pnpm](https://pnpm.io/) - `pnpm add @road-labs/ocmf`
 
-Note that package to cover crypto related functionality will also need to be installed, discussed below.
+Note that a package to cover crypto related functionality will also need to be installed, discussed below.
 
 ## Dependencies
 

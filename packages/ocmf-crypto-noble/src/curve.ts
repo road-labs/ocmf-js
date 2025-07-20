@@ -1,5 +1,5 @@
 import { secp256k1 } from '@noble/curves/secp256k1';
-import { secp256r1, secp384r1 } from '@noble/curves/nist';
+import { p256, p384 } from '@noble/curves/nist';
 import { Field } from '@noble/curves/abstract/modular';
 import { sha256, sha384 } from '@noble/hashes/sha2';
 import { Curve } from '@road-labs/ocmf-crypto';
@@ -88,9 +88,9 @@ export function resolveCurveFn(curve: Curve): CurveFn {
     case 'secp256k1':
       return secp256k1;
     case 'secp256r1':
-      return secp256r1;
+      return p256;
     case 'secp384r1':
-      return secp384r1;
+      return p384;
     case 'brainpool256r1':
       return brainpool256r1;
     case 'brainpool384r1':

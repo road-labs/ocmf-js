@@ -34,14 +34,14 @@
     "@types/node": "catalog:",
     "jest": "catalog:",
     "rimraf": "catalog:",
+    "test-commons": "workspace:*",
     "ts-jest": "catalog:",
     "ts-node": "catalog:",
-    "typescript": "catalog:",
-    "test-commons": "workspace:*"
+    "typescript": "catalog:"
   },
   "dependencies": {
-    "@road-labs/ocmf-crypto": "workspace:*",
-    "@noble/curves": "^1.9.2",
-    "@noble/hashes": "^1.8.0"
+    "@noble/curves": "^1.9.4",
+    "@noble/hashes": "^1.8.0",
+    "@road-labs/ocmf-crypto": "workspace:*"
   }
 }

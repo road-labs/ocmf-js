@@ -15,9 +15,6 @@ catalogs:
     jest:
       specifier: ^30.0.0
       version: 30.0.2
-    jest-mock-extended:
-      specifier: ^4.0.0
-      version: 4.0.0
     rimraf:
       specifier: ^6.0.1
       version: 6.0.1
@@ -285,12 +282,6 @@ importers:
 
   packages/ocmf-crypto-web:
     dependencies:
-      '@noble/curves':
-        specifier: ^1.9.2
-        version: 1.9.2
-      '@noble/hashes':
-        specifier: ^1.8.0
-        version: 1.8.0
       '@road-labs/ocmf-crypto':
         specifier: workspace:*
         version: link:../ocmf-crypto
@@ -713,10 +704,6 @@ packages:
 
   '@napi-rs/wasm-runtime@0.2.11':
     resolution: {integrity: sha512-9DPkXtvHydrcOsopiYpUgPHpmj0HWZKMUnL2dZqpvC42lsratuBG06V5ipyno0fUek5VlFsNQ+AcFATSrJXgMA==}
-
-  '@noble/curves@1.9.2':
-    resolution: {integrity: sha512-HxngEd2XUcg9xi20JkwlLCtYwfoFw4JGkuZpT+WlsPD4gB/cxkvTD8fSsoAnphGZhFdZYKeQIPCuFlWPm1uE0g==}
-    engines: {node: ^14.21.3 || >=16}
 
   '@noble/curves@1.9.4':
     resolution: {integrity: sha512-2bKONnuM53lINoDrSmK8qP8W271ms7pygDhZt4SiLOoLwBtoHqeCFi6RG42V8zd3mLHuJFhU/Bmaqo4nX0/kBw==}
@@ -3097,10 +3084,6 @@ snapshots:
       '@emnapi/runtime': 1.4.3
       '@tybys/wasm-util': 0.9.0
     optional: true
-
-  '@noble/curves@1.9.2':
-    dependencies:
-      '@noble/hashes': 1.8.0
 
   '@noble/curves@1.9.4':
     dependencies:

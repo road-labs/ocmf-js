@@ -1,6 +1,6 @@
 {
   "name": "@road-labs/ocmf-crypto-web",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "build/cjs/index.js",
   "module": "build/es2022/index.js",
   "types": "build/types/index.d.ts",

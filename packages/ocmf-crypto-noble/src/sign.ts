@@ -32,5 +32,5 @@ export default function sign(
 
   return resolveCurveFn(privateKey.getCurve())
     .sign(sha256(data), privateKey.getValue())
-    .toDERRawBytes();
+    .toBytes('der');
 }

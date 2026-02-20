@@ -43,5 +43,8 @@
     "@noble/curves": "^2.0.1",
     "@noble/hashes": "^2.0.1",
     "@road-labs/ocmf-crypto": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }

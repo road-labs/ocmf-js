@@ -7,5 +7,9 @@ module.exports = {
   testEnvironment: 'node',
   transform: {
     ...tsJestTransformCfg,
+    '^.+/@noble/(curves|hashes)/.+\\.js$': ['ts-jest', { useESM: true }],
   },
+  transformIgnorePatterns: [
+    '/node_modules/.pnpm/(?!(@noble\\+curves|@noble\\+hashes))',
+  ],
 };

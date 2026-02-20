@@ -1,5 +1,5 @@
 import { EcPrivateKey } from './private-key';
-import { sha256 } from '@noble/hashes/sha2';
+import { sha256 } from '@noble/hashes/sha2.js';
 import { resolveCurveFn } from './curve';
 import {
   Hash,
@@ -30,7 +30,9 @@ export default function sign(
     );
   }
 
-  return resolveCurveFn(privateKey.getCurve())
-    .sign(sha256(data), privateKey.getValue())
-    .toBytes('der');
+  return resolveCurveFn(privateKey.getCurve()).sign(
+    sha256(data),
+    privateKey.getValue(),
+    { prehash: false, lowS: false, format: 'der' }
+  );
 }

@@ -6,7 +6,6 @@ describe('formatDate', () => {
     const date = new Date(2025, 6, 29, 8, 12, 34, 15);
     const actual = formatDate(date, 'S');
     expect(actual).toMatch(/^2025-07-29T08:12:34,015[+-][0-9]{4} S$/);
-    console.log(actual);
   });
 });
 

@@ -1,5 +1,5 @@
 import { EcPublicKey } from './public-key';
-import { sha256 } from '@noble/hashes/sha2';
+import { sha256 } from '@noble/hashes/sha2.js';
 import { resolveCurveFn } from './curve';
 import {
   Hash,
@@ -35,6 +35,6 @@ export default function verify(
     signature,
     sha256(data),
     key.getValue(),
-    { format: 'der' }
+    { format: 'der', prehash: false, lowS: false }
   );
 }

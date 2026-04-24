@@ -40,8 +40,8 @@
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@noble/curves": "^2.0.1",
-    "@noble/hashes": "^2.0.1",
+    "@noble/curves": "^2.2.0",
+    "@noble/hashes": "^2.2.0",
     "@road-labs/ocmf-crypto": "workspace:*"
   },
   "engines": {

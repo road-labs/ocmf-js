@@ -38,9 +38,9 @@
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@peculiar/asn1-ecc": "^2.3.15",
-    "@peculiar/asn1-pkcs8": "^2.3.15",
-    "@peculiar/asn1-schema": "^2.3.15",
-    "@peculiar/asn1-x509": "^2.3.15"
+    "@peculiar/asn1-ecc": "^2.8.0",
+    "@peculiar/asn1-pkcs8": "^2.8.0",
+    "@peculiar/asn1-schema": "^2.8.0",
+    "@peculiar/asn1-x509": "^2.8.0"
   }
 }

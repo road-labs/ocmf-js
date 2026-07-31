@@ -48,7 +48,7 @@ export default async function verify(
     { name: 'ECDSA', hash },
     key.getCryptoKey(),
     rs,
-    data
+    data.slice()
   );
 }
 

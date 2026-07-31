@@ -108,7 +108,7 @@ export function encodePkixSubjectPublicKeyInfo(
         new ECParameters(keyInfo.algorithm.parameters)
       ),
     }),
-    subjectPublicKey: keyInfo.subjectPublicKey,
+    subjectPublicKey: keyInfo.subjectPublicKey.slice().buffer,
   });
   return new Uint8Array(AsnConvert.serialize(asn1));
 }
@@ -144,8 +144,8 @@ export function encodePkixEcdsaSigValue(
   sigValue: PkixEcdsaSigValue
 ): Uint8Array {
   const asn1 = new ECDSASigValue({
-    r: sigValue.r,
-    s: sigValue.s,
+    r: sigValue.r.slice().buffer,
+    s: sigValue.s.slice().buffer,
   });
   return new Uint8Array(AsnConvert.serialize(asn1));
 }

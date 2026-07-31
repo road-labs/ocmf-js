@@ -32,7 +32,7 @@ export default async function sign(
   const result = await crypto.subtle.sign(
     { name: 'ECDSA', hash },
     privateKey.getCryptoKey(),
-    data
+    data.slice()
   );
 
   if (result.byteLength === 0 || result.byteLength % 2 !== 0) {

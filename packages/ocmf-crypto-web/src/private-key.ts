@@ -55,7 +55,7 @@ export class EcPrivateKey {
 
     const privateCryptoKey = await crypto.subtle.importKey(
       'pkcs8',
-      value,
+      value.slice(),
       {
         name: 'ECDSA',
         namedCurve: webCryptoCurve,
@@ -89,7 +89,7 @@ export class EcPrivateKey {
     }
     return crypto.subtle.importKey(
       'raw',
-      privateKeyInfo.privateKey.publicKey,
+      privateKeyInfo.privateKey.publicKey.slice(),
       {
         name: 'ECDSA',
         namedCurve: webCryptoCurve,

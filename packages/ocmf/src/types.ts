@@ -14,10 +14,7 @@ type PlmnUserAssignment = 'PLMN_NONE' | 'PLMN_RING' | 'PLMN_SMS';
 type ChargingPointAssignment = 'EVSEID' | 'CBIDC';
 
 type RfidUserAssignment =
-  | 'RFID_NONE'
-  | 'RFID_PLAIN'
-  | 'RFID_RELATED'
-  | 'RFID_PSK';
+  'RFID_NONE' | 'RFID_PLAIN' | 'RFID_RELATED' | 'RFID_PSK';
 
 type OcppUserAssignment =
   | 'OCPP_NONE'

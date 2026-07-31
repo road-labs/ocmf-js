@@ -48,7 +48,7 @@ export class EcPublicKey {
 
     const cryptoKey = await crypto.subtle.importKey(
       'spki',
-      value,
+      value.slice(),
       {
         name: 'ECDSA',
         namedCurve: mapCurveToWebCryptoCurve(curve),

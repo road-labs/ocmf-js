@@ -6,6 +6,13 @@ import {
 } from '@road-labs/ocmf-crypto';
 import { hexToBytes, stringToBytes } from './utils';
 
+type TestCase = {
+  name: string;
+  curve: Curve;
+  pkcs8: Uint8Array;
+  hash: Hash;
+};
+
 const testCases: {
   name: string;
   curve: Curve;
@@ -55,14 +62,14 @@ const testCases: {
   },
 ];
 
-export function buildSignTestCases(curves: Curve[]) {
+export function buildSignTestCases(curves: Curve[]): TestCase[] {
   return testCases
     .filter((testCase) => curves.includes(testCase.curve))
     .map(({ name, curve, pkcs8 }) => ({
       name,
       curve,
       data: stringToBytes('example'),
-      hash: 'SHA-256' as Hash,
+      hash: 'SHA-256',
       pkcs8: hexToBytes(pkcs8),
     }));
 }

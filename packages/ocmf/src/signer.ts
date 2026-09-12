@@ -37,7 +37,7 @@ export default class Signer {
     const signatureSegment = JSON.stringify({
       SA: signatureMethod.id,
       SD: bytesToHex(signature).toUpperCase(),
-    } as Signature);
+    } satisfies Signature);
 
     return [Header, payloadDataSegment, signatureSegment].join('|');
   }

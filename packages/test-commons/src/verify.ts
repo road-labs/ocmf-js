@@ -1,6 +1,16 @@
 import { Curve, Hash } from '@road-labs/ocmf-crypto';
 import { hexToBytes, stringToBytes } from './utils';
 
+type TestCase = {
+  name: string;
+  curve: Curve;
+  signature: Uint8Array;
+  data: Uint8Array;
+  hash: Hash;
+  spki: Uint8Array;
+  expected: boolean;
+};
+
 const testCases: {
   name: string;
   curve: Curve;
@@ -299,7 +309,7 @@ const testCases: {
   },
 ];
 
-export function buildVerifyTestCases(curves: Curve[]) {
+export function buildVerifyTestCases(curves: Curve[]): TestCase[] {
   return testCases
     .filter((testCase) => curves.includes(testCase.curve))
     .map(({ name, curve, signature, data, spki, expected }) => ({
@@ -307,7 +317,7 @@ export function buildVerifyTestCases(curves: Curve[]) {
       curve,
       signature: hexToBytes(signature),
       data: stringToBytes(data),
-      hash: 'SHA-256' as Hash,
+      hash: 'SHA-256',
       spki: hexToBytes(spki),
       expected,
     }));

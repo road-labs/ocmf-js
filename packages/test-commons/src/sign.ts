@@ -9,6 +9,7 @@ import { hexToBytes, stringToBytes } from './utils';
 type TestCase = {
   name: string;
   curve: Curve;
+  data: Uint8Array;
   pkcs8: Uint8Array;
   hash: Hash;
 };

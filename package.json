@@ -30,7 +30,7 @@
     "proseWrap": "always"
   },
   "volta": {
-    "node": "24.18.1",
+    "node": "24.22.1",
     "pnpm": "10.34.5"
   },
   "packageManager": "pnpm@10.34.5"
